@@ -24,7 +24,8 @@ def train(ticker="MSFT"):
 
     model = Prophet()
     model.fit(df_forecast)
-
+    
+    # saves model features and weights into file so don't have to train again
     joblib.dump(model, Path(BASE_DIR).joinpath(f"{ticker}.joblib"))
 
 
